@@ -10,22 +10,18 @@ namespace Lab_2
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello! This program will tell you if your input integer is even or odd.");
             while (true)
             {
-                Console.WriteLine("Hello! This program will tell you if your input integer is even or odd.");
-                Console.WriteLine("Please enter your first name.");
-                string name = Console.ReadLine();
-                Console.WriteLine("Please enter an integer between 1-100 (whole number).");
-                int answer;
                 bool valid = false;
-
+                Console.WriteLine("What is your first name?");
+                string name = Console.ReadLine();
+                Console.WriteLine($"Okay {name}, please enter an integer between 1-100 (whole number).");
+                
                 do
                 {
                     string input = Console.ReadLine();
-
-                    bool success = int.TryParse(input, out answer);
-                    
-
+                    bool success = int.TryParse(input, out int answer);
                     if (answer >= 1 && answer <= 100)
                     {
                         if (answer % 2 == 0)
@@ -41,10 +37,8 @@ namespace Lab_2
                                 }
                                 else
                                 {
-                                    
                                     Environment.Exit(0);
                                 }
-                                    
                             }
                             else if (answer >= 26 && answer <= 60)
                             {
@@ -57,7 +51,6 @@ namespace Lab_2
                                 }
                                 else
                                 {
-
                                     Environment.Exit(0);
                                 }
                             }
@@ -72,12 +65,10 @@ namespace Lab_2
                                 }
                                 else
                                 {
-
                                     Environment.Exit(0);
                                 }
                             }
                         }
-                        
                         else if (answer % 2 != 0)
                         {
                             if (answer > 60)
@@ -91,7 +82,6 @@ namespace Lab_2
                                 }
                                 else
                                 {
-
                                     Environment.Exit(0);
                                 }
                             }
@@ -106,7 +96,6 @@ namespace Lab_2
                                 }
                                 else
                                 {
-
                                     Environment.Exit(0);
                                 }
                             }
@@ -114,7 +103,7 @@ namespace Lab_2
                     }
                     else
                     {
-                        Console.WriteLine("I'm sorry, that was not a valid input.");
+                        Console.WriteLine($"I'm sorry {name}, that was not a valid input.");
                         Console.WriteLine("Please enter an integer between 1-100 (whole number).");
                     }
                 } while (!valid);
